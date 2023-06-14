@@ -1,24 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
+import Dropdown from "./components/Dropdown";
+
+/** App function
+ *
+ * @description App function to render the dropdown menu
+ * @returns {JSX.Element} App component
+*/
 
 function App() {
+
+  const [state, setState] = useState("");
+ 
+  const data = [
+    {
+      id: 1,
+      name: "Communication",
+    },
+    {
+      id: 2,
+      name: "Community",
+    },
+    {
+      id: 3,
+      name: "Development",
+    },
+    {
+      id: 4,
+      name: "Marketing",
+    },
+    {
+      id: 5,
+      name: "Sales",
+    },
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="dropdown-container">
+        <Dropdown
+          result={(value) => {
+            setState(value);
+          }}
+          options={data}
+        />
+      </div>
   );
 }
 
