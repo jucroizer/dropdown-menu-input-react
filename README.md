@@ -7,7 +7,7 @@ This is a simple react component for a dropdown menu input.
 The package can be installed via [npm]:
 
 ```
-npm i dropdown-react-input-menu
+npm i dropdown-react-input-menu-1
 
 ```
 
